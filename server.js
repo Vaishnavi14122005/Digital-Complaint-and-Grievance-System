@@ -21,29 +21,24 @@ app.use("/api/category", categoryRoutes);
 app.use("/api/officer", officerRoutes);
 app.use("/api/report", reportRoutes);
 app.use("/api/complaints", complaintRoutes);
-app.use("/api/complaints", require("./routes/complaintRoutes"));
 
 // static files
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-app.use(express.static(path.join(__dirname, "build")));
 
-// FIXED: proper catch-all route
+// Serve React build (ONLY if exists)
+const buildPath = path.join(__dirname, "build");
+app.use(express.static(buildPath));
+
+// Catch-all (ONLY ONE)
 app.use((req, res) => {
   if (!req.originalUrl.startsWith("/api")) {
-    res.sendFile(path.join(__dirname, "build", "index.html"));
+    res.sendFile(path.join(buildPath, "index.html"));
   }
 });
 
-const PORT = 3001;
+// PORT FIX (IMPORTANT)
+const PORT = process.env.PORT || 3001;
+
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
-
-
-
-// Serve React build
-app.use(express.static(path.join(__dirname, "build")));
-
-app.use((req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  console.log(`Server running on port ${PORT}`);
 });
