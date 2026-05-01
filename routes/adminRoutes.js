@@ -1,8 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-// ❌ removed middleware
-
 const {
   getAllComplaints,
   assignComplaint,
@@ -11,8 +9,6 @@ const {
   getUsers,
   respondToComplaint,
 } = require("../controllers/adminController");
-
-// ✅ simple routes (no auth)
 
 router.get("/complaints", getAllComplaints);
 router.put("/assign-complaint", assignComplaint);

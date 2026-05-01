@@ -12,7 +12,7 @@ exports.createComplaint = (req, res) => {
   const user_id = req.user.id;
   const file_path = req.file ? req.file.path : null;
 
-  //  DEBUG
+  // DEBUG
   console.log("INSERT USER ID:", user_id);
 
   if (!title || !description || !category || !priority) {

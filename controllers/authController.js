@@ -2,7 +2,7 @@ const db = require("../config/db");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken"); // ⭐ added
 
-// ================= REGISTER =================
+//================= REGISTER =================
 exports.register = async (req, res) => {
   const { name, email, password, role = "user" } = req.body;
 
@@ -56,7 +56,7 @@ exports.login = (req, res) => {
       return res.status(401).json({ message: "Invalid credentials." });
     }
 
-    // ✅ FIXED TOKEN (with role)
+    //FIXED TOKEN (with role)
     const token = jwt.sign(
       { 
         id: user.user_id,role: user.role,
@@ -69,7 +69,7 @@ exports.login = (req, res) => {
     res.status(200).json({
       message: "Login successful.",
       token,
-      role: user.role, // ✅ easy frontend access
+      role: user.role, //easy frontend access
       user: {
         id: user.user_id,
         name: user.name,

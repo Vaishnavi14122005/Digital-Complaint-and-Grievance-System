@@ -6,7 +6,7 @@ function AuthProvider({ children }) {
 
   const [token, setToken] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [loading, setLoading] = useState(true); // ⭐ important
+  const [loading, setLoading] = useState(true); //important
 
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
@@ -16,7 +16,7 @@ function AuthProvider({ children }) {
       setIsAuthenticated(true);
     }
 
-    setLoading(false); // ⭐ after checking
+    setLoading(false); //after checking
   }, []);
 
   const login = (newToken) => {
@@ -38,7 +38,7 @@ function AuthProvider({ children }) {
         isAuthenticated,
         login,
         logout,
-        loading // ⭐ expose this
+        loading //expose this
       }}
     >
       {children}

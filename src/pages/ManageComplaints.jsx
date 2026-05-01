@@ -24,7 +24,7 @@ function ManageComplaints() {
     }
   };
 
-  // ✅ UPDATE STATUS
+  //UPDATE STATUS
   const updateStatus = async (id, newStatus) => {
     try {
       await API.put(`/complaints/${id}/status`, {

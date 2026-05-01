@@ -19,7 +19,7 @@
   background-color: #f4f4f4;
 }
 
-/* 🔵 PROGRESS BAR */
+/*PROGRESS BAR */
 .progress {
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@
   gap: 5px;
 }
 
-/* 🔵 DOT */
+/* DOT */
 .dot {
   width: 15px;
   height: 15px;
@@ -35,17 +35,17 @@
   background-color: #ccc;
 }
 
-/* ✅ COMPLETED */
+/* COMPLETED */
 .dot.active {
   background-color: green;
 }
 
-/* ❌ REJECTED */
+/* REJECTED */
 .dot.reject {
   background-color: red;
 }
 
-/* ➖ LINE BETWEEN DOTS */
+/*  LINE BETWEEN DOTS */
 .line {
   width: 40px;
   height: 3px;
@@ -56,7 +56,7 @@
   background-color: green;
 }
 
-/* 📝 LABELS */
+/* LABELS */
 .progress-text {
   display: flex;
   justify-content: space-between;

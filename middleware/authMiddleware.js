@@ -12,7 +12,7 @@ const authMiddleware = (req, res, next) => {
 
     const decoded = jwt.verify(token, "secret123");
 
-    // ✅ INCLUDE ROLE
+    // INCLUDE ROLE
     req.user = {
       id: decoded.id,
       role: decoded.role

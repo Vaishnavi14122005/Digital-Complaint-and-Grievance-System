@@ -28,7 +28,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* USER ROUTES (UNCHANGED) */}
+        {/* USER ROUTES */}
         <Route
           path="/dashboard"
           element={
@@ -84,7 +84,7 @@ function App() {
           }
         />
 
-        {/* ✅ NEW: Manage Complaints */}
+        {/*Manage Complaints */}
         <Route
           path="/manage"
           element={
@@ -94,7 +94,7 @@ function App() {
           }
         />
 
-        {/* Existing admin-only route */}
+        {/* admin-only route */}
         <Route
           path="/all"
           element={

@@ -8,7 +8,7 @@ function Dashboard() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // 🔐 Check token before making API call
+    //Check token before making API call
     const token = localStorage.getItem("token");
     if (!token) {
       navigate("/");
@@ -25,7 +25,7 @@ function Dashboard() {
     } catch (err) {
       console.log("Error:", err.response?.data);
 
-      // 🔴 If token expired / invalid
+      //If token expired / invalid
       if (err.response?.status === 401) {
         localStorage.removeItem("token");
         navigate("/");

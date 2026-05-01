@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-// ❌ removed middleware
 
 const {
   addCategory,
@@ -9,7 +8,6 @@ const {
   deleteCategory,
 } = require("../controllers/categoryController");
 
-// ✅ simple routes
 
 router.post("/", addCategory);
 router.get("/", getCategories);

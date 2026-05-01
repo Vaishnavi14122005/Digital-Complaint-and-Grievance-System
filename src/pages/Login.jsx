@@ -20,10 +20,10 @@ function Login() {
         password
       });
 
-      // ✅ STORE TOKEN
+      // STORE TOKEN
       login(res.data.token);
 
-      // ✅ STORE FULL USER OBJECT WITH ROLE
+      //STORE FULL USER OBJECT WITH ROLE
       localStorage.setItem("user", JSON.stringify({
       ...res.data.user,
       role: res.data.role
@@ -31,7 +31,7 @@ function Login() {
 
       alert("Login successful");
 
-      // ✅ REDIRECT BASED ON ROLE
+      // REDIRECT BASED ON ROLE
       if (res.data.role === "admin") {
         navigate("/admin");
       } else {
